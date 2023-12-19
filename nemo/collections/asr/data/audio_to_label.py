@@ -130,6 +130,8 @@ def _fixed_seq_collate_fn(self, batch):
 
     audio_signal, tokens, new_audio_lengths = [], [], []
     for sig, sig_len, tokens_i, _ in batch:
+        if len(sig.shape)>1:
+            sig=sig[:,0]
         if has_audio:
             sig_len = sig_len.item()
             chunck_len = sig_len - fixed_length
