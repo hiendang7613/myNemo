@@ -12,11 +12,14 @@ model:
     manifest_filepath: ???
     sample_rate: 16000
     labels: null
-    batch_size: 64
+    batch_size: 16
     shuffle: True
     is_tarred: False
     tarred_audio_filepaths: null
     tarred_shard_strategy: "scatter"
+    cal_labels_occurrence: True
+    max_duration: 16.7
+
     augmentor:
       speed:
         prob: 0.3
@@ -29,7 +32,7 @@ model:
     manifest_filepath: ???
     sample_rate: 16000
     labels: null
-    batch_size: 128
+    batch_size: 8
     shuffle: False
 
   model_defaults:
