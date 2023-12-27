@@ -154,7 +154,7 @@ def get_concat_tarred_speech_label_dataset(
         sampling_probabilities=config.get('concat_sampling_probabilities', None),
         global_rank=global_rank,
         world_size=world_size,
-        shuffle=config['shuffle'],
+        shuffle=True,
     )
     return dataset
 
